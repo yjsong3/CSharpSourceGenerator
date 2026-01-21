@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- 1. 반드시 netstandard2.0 이어야 함 (컴파일러 호환성) -->
+    <TargetFramework>netstandard2.0</TargetFramework>
+
+    <!-- 2. 분석기(Analyzer)로 인식시키기 위한 설정 -->
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+    <IsRoslynComponent>true</IsRoslynComponent>
+
+    <!-- 3. C# 최신 문법(패턴 매칭 등)을 사용하기 위한 설정 -->
+    <LangVersion>11.0</LangVersion>
+
+    <!-- 4. 빌드 결과물에 불필요한 파일 제외 -->
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <DevelopmentDependency>true</DevelopmentDependency>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.11.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.0.0" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>
